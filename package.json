@@ -1,0 +1,33 @@
+{
+  "name": "outlook-logic-app-website",
+  "version": "0.1.0",
+  "description": "HTML page and logic for serverless website",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffhollan/serverless-outlook-addin.git"
+  },
+  "keywords": [
+    "serverless",
+    "azure",
+    "logicapp"
+  ],
+  "author": "Jeff Hollan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffhollan/serverless-outlook-addin/issues"
+  },
+  "homepage": "https://github.com/jeffhollan/serverless-outlook-addin#readme",
+  "devDependencies": {
+    "browser-sync": "^2.14.0"
+  },
+  "dependencies": {
+    "semantic-ui": "^2.2.2",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2",
+    "webpack": "^1.13.1"
+  }
+}
