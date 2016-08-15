@@ -11,7 +11,7 @@ startup();
 //Switch to "WhatIsBumpMail?"
 let whatis_masthead = document.getElementById('whatis_masthead');
 whatis_masthead.addEventListener('click', function() {
-    console.log('clicked');
+    
     ReactDOM.render(
         <WhatIsBumpMail />,
         document.getElementById('main')

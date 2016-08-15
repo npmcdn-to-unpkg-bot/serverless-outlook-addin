@@ -32,6 +32,7 @@
     "babel-cli": "^6.11.4",
     "gulp-babel": "^6.1.2",
     "gulp-file-include": "^0.14.0",
+    "gulp-typings": "^2.0.3",
     "gulp-watch": "^4.3.9",
     "semantic-ui": "^2.2.2",
     "source-map-loader": "^0.1.5",

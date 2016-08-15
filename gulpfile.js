@@ -5,6 +5,7 @@ var gulp        = require("gulp")
 ,   webpack_cfg = require("./webpack.config")
 ,   fileinclude = require("gulp-file-include")
 ,   babel       = require("gulp-babel")
+,   typings     = require("gulp-typings")
 
 /*
 SEMANTIC-UI MODULES 
@@ -18,6 +19,12 @@ SEMANTIC-UI MODULES
 ,   semantic_clean        = require('./semantic/tasks/clean')
 ;
 
+gulp.task('typings', function() {
+    var stream = gulp.src("./typings.json")
+        .pipe(typings()); //will install all typingsfiles in pipeline. 
+    return stream;
+    
+});
 
 gulp.task('webpack', function() {
     webpack(
@@ -39,7 +46,7 @@ gulp.task('html', function() {
       .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('scripts', ['webpack'], function() {
+gulp.task('scripts', ['typings', 'webpack'], function() {
     gulp.src('./src/scripts/*.js')
     .pipe(babel())
     .pipe(gulp.dest('./dist/'));
