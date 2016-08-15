@@ -6,11 +6,11 @@ export class HomePage extends React.Component<any, {}> {
     }
 }
 
-let top = <div className="ui vertical stripe segment">
+let top = <div><div className="ui vertical stripe segment">
         <div className="ui middle aligned stackable grid container">
             <div className="row">
                 <div className="eight wide column">
-                    <h3 className="ui header">We Help Companies and Companions</h3>
+                    <h3 className="ui header">This Will Change Your Life</h3>
                     <p>We can give your company superpowers to do things that they never thought possible. Let us delight your
                         customers and empower your needs...through pure data analytics.</p>
                     <h3 className="ui header">We Make Bananas That Can Dance</h3>
@@ -26,9 +26,8 @@ let top = <div className="ui vertical stripe segment">
                 </div>
             </div>
         </div>
-    </div>;
-
-let quotes = <div className="ui vertical stripe quote segment">
+    </div>
+    <div className="ui vertical stripe quote segment">
         <div className="ui equal width stackable internally celled grid">
             <div className="center aligned row">
                 <div className="column">
@@ -44,9 +43,8 @@ let quotes = <div className="ui vertical stripe quote segment">
                 </div>
             </div>
         </div>
-    </div>;
-
- let bottom =  <div className="ui vertical stripe segment">
+    </div>
+    <div className="ui vertical stripe segment">
         <div className="ui text container">
             <h3 className="ui header">Breaking The Grid, Grabs Your Attention</h3>
             <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing
@@ -61,4 +59,5 @@ let quotes = <div className="ui vertical stripe quote segment">
                 took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
             <a className="ui large button">I'm Still Quite Interested</a>
         </div>
+    </div>
     </div>;
