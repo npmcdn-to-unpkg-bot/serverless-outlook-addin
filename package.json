@@ -25,6 +25,7 @@
     "browser-sync": "^2.14.0"
   },
   "dependencies": {
+    "gulp-file-include": "^0.14.0",
     "semantic-ui": "^2.2.2",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",

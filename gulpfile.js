@@ -3,6 +3,7 @@ var gulp        = require("gulp")
 ,   reload      = browserSync.reload
 ,   webpack     = require("webpack")
 ,   webpack_cfg = require("./webpack.config")
+,   fileinclude = require("gulp-file-include")
 
 /*
 SEMANTIC-UI MODULES 
@@ -27,9 +28,19 @@ gulp.task('webpack', function() {
         });
 });
 
+
 gulp.task('html', function() {
     gulp.src('index.html')
+      .pipe(fileinclude({
+          prefix: '@@',
+          basepath: './src/partials'
+      }))
       .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('scripts', ['webpack'], function() {
+    gulp.src('./src/scripts/*.js')
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('css', function() {
@@ -48,7 +59,7 @@ gulp.task('watch', ['build','semantic_watch'], function() {
     });
 });
 
-gulp.task('build', ['semantic_build', 'html', 'css'], function (){
+gulp.task('build', ['semantic_build', 'html', 'css', 'scripts'], function (){
 });
 
 gulp.task('clean', ['semantic_clean'], function() {

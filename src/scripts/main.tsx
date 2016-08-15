@@ -1,3 +1,7 @@
 import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { TopMenu } from "./components/topMenu";
 
-//foo
+ReactDOM.render(
+    <TopMenu />, document.getElementById('example')
+);
