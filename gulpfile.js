@@ -30,7 +30,7 @@ gulp.task('webpack', function() {
 
 
 gulp.task('html', function() {
-    gulp.src('index.html')
+    gulp.src('./src/index.html')
       .pipe(fileinclude({
           prefix: '@@',
           basepath: './src/partials'
