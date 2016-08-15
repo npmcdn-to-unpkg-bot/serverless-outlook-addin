@@ -4,6 +4,7 @@ var gulp        = require("gulp")
 ,   webpack     = require("webpack")
 ,   webpack_cfg = require("./webpack.config")
 ,   fileinclude = require("gulp-file-include")
+,   babel       = require("gulp-babel")
 
 /*
 SEMANTIC-UI MODULES 
@@ -40,6 +41,7 @@ gulp.task('html', function() {
 
 gulp.task('scripts', ['webpack'], function() {
     gulp.src('./src/scripts/*.js')
+    .pipe(babel())
     .pipe(gulp.dest('./dist/'));
 });
 
@@ -55,7 +57,12 @@ gulp.task('watch', ['build','semantic_watch'], function() {
     gulp.watch(['src/styles/**/*.css'], ['css']);
     gulp.watch(['dist/semantic.*', 'dist/main.css']).on('change', reload);
     gulp.watch(['**/*.html'], function(file) {
-        gulp.src(file.path).pipe(gulp.dest('./dist/')).on('end', reload);
+        gulp.src(file.path)
+          .pipe(fileinclude({
+          prefix: '@@',
+          basepath: './src/partials'
+      }))
+          .pipe(gulp.dest('./dist/')).on('end', reload);
     });
 });
 
