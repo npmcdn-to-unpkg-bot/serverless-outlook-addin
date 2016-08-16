@@ -58,13 +58,14 @@ gulp.task('css', function() {
 
 gulp.task('watch', ['build','semantic_watch'], function() {
     browserSync.init({
-        server: "./dist/"
+        server: "./dist/",
+        online: true
     });
     gulp.watch(['src/scripts/**/*.tsx'], ['webpack']);
     gulp.watch(['src/styles/**/*.css'], ['css']);
     gulp.watch(['dist/semantic.*', 'dist/main.css']).on('change', reload);
-    gulp.watch(['**/*.html'], function(file) {
-        gulp.src(file.path)
+    gulp.watch(['src/**/*.html'], function(file) {
+        gulp.src('./src/index.html')
           .pipe(fileinclude({
           prefix: '@@',
           basepath: './src/partials'
