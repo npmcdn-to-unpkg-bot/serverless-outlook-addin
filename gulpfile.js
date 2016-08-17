@@ -52,6 +52,11 @@ gulp.task('scripts', ['typings', 'webpack'], function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('images', function() {
+    gulp.src('./src/images/**/*.*')
+      .pipe(gulp.dest('./dist/images/'))
+});
+
 gulp.task('css', function() {
     gulp.src('./src/styles/**/*.css').pipe(gulp.dest('./dist/'));
 });
@@ -62,6 +67,7 @@ gulp.task('watch', ['build','semantic_watch'], function() {
         online: true
     });
     gulp.watch(['src/scripts/**/*.tsx', 'src/scripts/**/*.js'], ['webpack']);
+    gulp.watch(['src/images/**/*.*'], ['images']);
     gulp.watch(['src/styles/**/*.css'], ['css']);
     gulp.watch(['dist/semantic.*', 'dist/main.css']).on('change', reload);
     gulp.watch(['src/**/*.html'], function(file) {
@@ -74,7 +80,7 @@ gulp.task('watch', ['build','semantic_watch'], function() {
     });
 });
 
-gulp.task('build', ['semantic_build', 'html', 'css', 'scripts'], function (){
+gulp.task('build', ['semantic_build', 'html', 'css', 'scripts', 'images'], function (){
 });
 
 gulp.task('clean', ['semantic_clean'], function() {

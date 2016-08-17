@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');  
+  .iconbar img {
+    max-height: 140px;
+    margin: 0 auto;
+  }
+
+  .iconbar .text {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: large;
+  }
+ 
   .hidden.menu {
       display: none;
     }
