@@ -54,7 +54,8 @@ gulp.task('scripts', ['typings', 'webpack'], function() {
 
 gulp.task('images', function() {
     gulp.src('./src/images/**/*.*')
-      .pipe(gulp.dest('./dist/images/'))
+      .pipe(gulp.dest('./dist/images/'));
+      browserSync.reload();
 });
 
 gulp.task('css', function() {
