@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "babel-cli": "^6.11.4",
+    "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-file-include": "^0.14.0",
     "gulp-typings": "^2.0.3",
@@ -37,7 +38,7 @@
     "react": "^15.3.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "semantic-ui": "^2.2.2",
+    "semantic-ui": "2.2.2",
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
