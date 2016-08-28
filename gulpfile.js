@@ -67,7 +67,7 @@ gulp.task('watch', ['build','semantic_watch'], function() {
         server: "./dist/",
         online: true
     });
-    gulp.watch(['src/scripts/**/*.tsx', 'src/scripts/**/*.js'], ['webpack']);
+    gulp.watch(['src/scripts/**/*.tsx', 'src/scripts/**/*.js'], ['scripts']);
     gulp.watch(['src/images/**/*.*'], ['images']);
     gulp.watch(['src/styles/**/*.css'], ['css']);
     gulp.watch(['dist/semantic.*', 'dist/main.css']).on('change', reload);
